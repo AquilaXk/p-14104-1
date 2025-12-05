@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-
 @Service
 @RequiredArgsConstructor
 public class PostService {
@@ -47,5 +46,9 @@ public class PostService {
 
     public void modifyComment(PostComment postComment, String content) {
         postComment.modify(content);
+    }
+
+    public void delete(Post post) {
+        postRepository.delete(post);
     }
 }
