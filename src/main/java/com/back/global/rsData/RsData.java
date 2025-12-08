@@ -1,12 +1,14 @@
-
 package com.back.global.rsData;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public record RsData<T>(String resultCode,
-                        @JsonIgnore int statusCode,
-                        String msg,
-                        T data) {
+public record RsData<T>(
+        String resultCode,
+        @JsonIgnore
+        int statusCode,
+        String msg,
+        T data
+) {
     public RsData(String resultCode, String msg) {
         this(resultCode, msg, null);
     }
@@ -15,4 +17,3 @@ public record RsData<T>(String resultCode,
         this(resultCode, Integer.parseInt(resultCode.split("-", 2)[0]), msg, data);
     }
 }
-

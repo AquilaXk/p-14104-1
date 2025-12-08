@@ -52,7 +52,6 @@ public class ApiV1PostController {
     }
 
 
-    // 입력값 형식
     record PostWriteReqBody(
             @NotBlank
             @Size(min = 2, max = 100)
@@ -63,7 +62,6 @@ public class ApiV1PostController {
     ) {
     }
 
-    // 출력값 형식
     record PostWriteResBody(
             long totalCount,
             PostDto post
@@ -77,13 +75,14 @@ public class ApiV1PostController {
 
         return new RsData<>(
                 "201-1",
-                "%d번 글이 생성되었습니다.".formatted(post.getId()),
+                "%d번 글이 작성되었습니다.".formatted(post.getId()),
                 new PostWriteResBody(
                         postService.count(),
                         new PostDto(post)
                 )
         );
     }
+
     record PostModifyReqBody(
             @NotBlank
             @Size(min = 2, max = 100)
