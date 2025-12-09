@@ -41,6 +41,9 @@ dependencies {
     runtimeOnly("com.h2database:h2")
     runtimeOnly("org.springframework.boot:spring-boot-h2console")
 
+    // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:3.0.0")
+
     // Test
     testImplementation("org.springframework.boot:spring-boot-starter-test") // 👈 중복 제거 후 하나만 남김
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
